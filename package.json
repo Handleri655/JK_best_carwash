@@ -1,0 +1,12 @@
+{
+  "name": "jk_best_car_wash",
+  "version": "1.0.0",
+  "description": "Premium-verkkosivut wow-efektillä — animoitu intro, kuplatehoste, scroll-animaatiot.",
+  "main": "parse-reviews.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

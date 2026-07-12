@@ -1,0 +1,46 @@
+{
+  "rating": 5,
+  "reviews": [
+    {
+      "text": "Nopea ja huolellinen autopesu. On tarjouksella 20€ koko loppuvuosi, isot suosittelut ystävälliselle pesijälle!",
+      "author": "LB21",
+      "rating": 5
+    },
+    {
+      "text": "Kunnon autonpesu & kuivaus👍+ ☕️ kahvit odotellessa. Asiakaspalvelu mainiota = suosittelen👌! …",
+      "author": "Kari",
+      "rating": 5
+    },
+    {
+      "text": "Hyvää asiakas palvelua ja todella siistiä jälkeä!",
+      "author": "Jimi Heino",
+      "rating": 5
+    },
+    {
+      "text": "Erittäin hyvää asiakaspalvelua ja tosi hyvää jälki kyllä tule jatkoo",
+      "author": "Karar Merza",
+      "rating": 5
+    },
+    {
+      "text": "Todella hyvä palvelu ja siisti työssä",
+      "author": "Shapol Yasi",
+      "rating": 5
+    },
+    {
+      "text": "On parsta autopesulla tampere",
+      "author": "Petteri Puumala",
+      "rating": 5
+    },
+    {
+      "text": "Hyvä paikka",
+      "author": "jimen hussein",
+      "rating": 5
+    },
+    {
+      "text": "Paras autopesulla Tampere",
+      "author": "Gailan Ttampere",
+      "rating": 5
+    }
+  ],
+  "count": 8
+}

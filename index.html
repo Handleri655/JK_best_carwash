@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="JK Best Carwash – Premium autopesu, vahaus ja keraaminen pinnoite. Wow-efekti heti kun avaat sivut.">
+  <title>JK Best Carwash</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+
+  <!-- Intro splash -->
+  <div class="splash" id="splash">
+    <div class="splash__inner">
+      <div class="splash__logo">
+        <img src="assets/logo-jk.svg" alt="" width="72" height="72">
+      </div>
+      <div class="splash__text">
+        <span class="splash__word" data-word="BEST">BEST</span>
+        <span class="splash__word" data-word="CARWASH">CARWASH</span>
+      </div>
+      <div class="splash__bar"><div class="splash__bar-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- Cursor glow (desktop) -->
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <!-- Nav -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#" class="nav__brand">
+        <img src="assets/logo-jk.svg" alt="JK" width="40" height="40">
+        <span>BEST CARWASH</span>
+      </a>
+      <nav class="nav__links" id="navLinks">
+        <a href="#palvelut">Palvelut</a>
+        <a href="#hinnasto">Hinnasto</a>
+        <a href="#meista">Meistä</a>
+        <a href="#arvostelut">Arvostelut</a>
+        <a href="#yhteystiedot">Yhteystiedot</a>
+      </nav>
+      <a href="tel:+358458458171" class="nav__phone">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Soita
+      </a>
+      <button class="nav__burger" id="navBurger" aria-label="Valikko">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero__bg" aria-hidden="true">
+      <img src="assets/hero-porsche.jpg" alt="" fetchpriority="high">
+    </div>
+    <canvas class="hero__canvas" id="bubbleCanvas"></canvas>
+    <div class="hero__gradient"></div>
+    <div class="hero__grid"></div>
+
+    <div class="hero__content">
+      <div class="hero__badge reveal" data-delay="0">
+        <span class="hero__badge-dot"></span>
+        Premium autopesu & huolto
+      </div>
+
+      <h1 class="hero__title">
+        <span class="hero__line reveal" data-delay="100"><span class="hero__word">Autosi</span></span>
+        <span class="hero__line reveal" data-delay="200"><span class="hero__word hero__word--glow">ansaitsee</span></span>
+        <span class="hero__line reveal" data-delay="300"><span class="hero__word">parasta.</span></span>
+      </h1>
+
+      <p class="hero__sub reveal" data-delay="450">
+        Käsipesu · Sisäpuhdistus · Vahaus · Keraaminen pinnoite · Renkaat
+      </p>
+
+      <div class="hero__stats reveal" data-delay="550">
+        <div class="hero__stat">
+          <span class="hero__stat-num" data-count="12">0</span>
+          <span class="hero__stat-label">Palvelua</span>
+        </div>
+        <div class="hero__stat-divider"></div>
+        <div class="hero__stat">
+          <span class="hero__stat-num">20<span class="hero__stat-euro">€</span></span>
+          <span class="hero__stat-label">Ulkopesu alkaen</span>
+        </div>
+        <div class="hero__stat-divider"></div>
+        <div class="hero__stat">
+          <span class="hero__stat-num" data-count="3">0</span>
+          <span class="hero__stat-label">Ajoneuvotyyppiä</span>
+        </div>
+      </div>
+
+      <div class="hero__cta reveal" data-delay="650">
+        <a href="#hinnasto" class="btn btn--glow">
+          <span>Katso hinnasto</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="tel:+358458458171" class="btn btn--ghost">Varaa aika →</a>
+      </div>
+    </div>
+
+    <div class="hero__scroll-hint">
+      <span>Scrollaa</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>ULKOPESU</span><span class="marquee__dot">◆</span>
+      <span>SISÄPUHDISTUS</span><span class="marquee__dot">◆</span>
+      <span>KOVAVAHAUS</span><span class="marquee__dot">◆</span>
+      <span>MYLLYTYS</span><span class="marquee__dot">◆</span>
+      <span>RENKAIDEN VAIHTO</span><span class="marquee__dot">◆</span>
+      <span>KERAAMINEN PINNOITE</span><span class="marquee__dot">◆</span>
+      <span>MOOTTORINPESU</span><span class="marquee__dot">◆</span>
+      <span>ULKOPESU</span><span class="marquee__dot">◆</span>
+      <span>SISÄPUHDISTUS</span><span class="marquee__dot">◆</span>
+      <span>KOVAVAHAUS</span><span class="marquee__dot">◆</span>
+      <span>MYLLYTYS</span><span class="marquee__dot">◆</span>
+      <span>RENKAIDEN VAIHTO</span><span class="marquee__dot">◆</span>
+      <span>KERAAMINEN PINNOITE</span><span class="marquee__dot">◆</span>
+      <span>MOOTTORINPESU</span><span class="marquee__dot">◆</span>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section class="section" id="palvelut">
+    <div class="wrap">
+      <div class="section-head reveal-on-scroll">
+        <span class="eyebrow">Palvelut</span>
+        <h2>Kaikki mitä autosi tarvitsee<br><em>yhdessä paikassa</em></h2>
+      </div>
+
+      <div class="bento">
+        <!-- Vasen: pääpalvelu -->
+        <article class="bento__card bento__card--hero reveal-on-scroll" style="--delay:0">
+          <div class="bento__card-bg">
+            <img src="assets/clean-car.jpg" alt="" loading="lazy">
+          </div>
+          <div class="bento__card-overlay"></div>
+          <div class="bento__card-content">
+            <span class="bento__tag">Suosituin</span>
+            <h3>Täysipesu</h3>
+            <p>Ulkopesu, sisäpuhdistus, imurointi ja ikkunoiden pesu – autosi kuin uusi.</p>
+            <span class="bento__price">alk. 50 €</span>
+          </div>
+        </article>
+
+        <!-- Oikea ylä: peruspalvelut -->
+        <article class="bento__card reveal-on-scroll" style="--delay:1">
+          <div class="bento__icon">💧</div>
+          <h3>Ulkopesu</h3>
+          <p>Perusteellinen käsinpesu ja kuivaus.</p>
+          <span class="bento__price">alk. 20 €</span>
+        </article>
+
+        <article class="bento__card reveal-on-scroll" style="--delay:2">
+          <div class="bento__icon">✨</div>
+          <h3>Kovavahaus</h3>
+          <p>Suojaa maalipintaa ja palauttaa kiillon.</p>
+          <span class="bento__price">alk. 85 €</span>
+        </article>
+
+        <!-- Oikea ala: erikoispalvelut -->
+        <article class="bento__card reveal-on-scroll" style="--delay:3">
+          <div class="bento__icon">🔧</div>
+          <h3>Myllytys</h3>
+          <p>Poistaa naarmut ja haalistumat.</p>
+          <span class="bento__price">alk. 150 €</span>
+        </article>
+
+        <article class="bento__card reveal-on-scroll" style="--delay:4">
+          <div class="bento__icon">🛞</div>
+          <h3>Renkaat</h3>
+          <p>Vaihto, säilytys ja tasapainotus.</p>
+          <span class="bento__price">alk. 20 €</span>
+        </article>
+
+        <!-- Ala: premium koko rivi -->
+        <article class="bento__card bento__card--premium reveal-on-scroll" style="--delay:5">
+          <div class="bento__premium-inner">
+            <div class="bento__premium-left">
+              <span class="bento__tag">Premium</span>
+              <div class="bento__icon">🛡️</div>
+            </div>
+            <div class="bento__premium-body">
+              <h3>NanoCeramic Protect Hard 9H</h3>
+              <p>Kovin mahdollinen keraaminen suoja autollesi – pitkäkestoinen suoja maalipinnalle.</p>
+            </div>
+            <span class="bento__price bento__price--premium">alk. 450 €</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="section section--dark" id="hinnasto">
+    <div class="wrap">
+      <div class="section-head reveal-on-scroll">
+        <span class="eyebrow">Hinnasto</span>
+        <h2>Selkeät hinnat,<br><em>ei yllätyksiä</em></h2>
+      </div>
+
+      <div class="vehicle-tabs reveal-on-scroll" role="tablist">
+        <button class="vehicle-tab active" data-v="henkiloauto" role="tab" aria-selected="true">
+          <span class="vehicle-tab__icon">🚗</span>
+          Henkilöauto
+        </button>
+        <button class="vehicle-tab" data-v="pakettiauto" role="tab" aria-selected="false">
+          <span class="vehicle-tab__icon">🚐</span>
+          Pakettiauto
+        </button>
+        <button class="vehicle-tab" data-v="asuntoauto" role="tab" aria-selected="false">
+          <span class="vehicle-tab__icon">🏕️</span>
+          Asuntoauto
+        </button>
+      </div>
+
+      <div class="price-grid" id="priceGrid"></div>
+
+      <p class="price-note reveal-on-scroll">* "alk." = alkaen-hinta. Lopullinen hinta riippuu auton koosta ja kunnosta.</p>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="meista">
+    <div class="wrap about">
+      <div class="about__visual reveal-on-scroll">
+        <div class="about__photo-wrap">
+          <img src="assets/about-car.jpg" alt="Ammattitaitoinen autopesu" class="about__photo" loading="lazy">
+        </div>
+      </div>
+      <div class="about__text reveal-on-scroll">
+        <span class="eyebrow">Meistä</span>
+        <h2>JK Best Carwash</h2>
+        <p class="about__lead">Pesemme, vahaamme ja huollamme autosi kuin omanamme. Laadukas työnjälki ja ystävällinen palvelu – joka kerta.</p>
+        <ul class="about__list">
+          <li><span>01</span> Huolellinen käsityö</li>
+          <li><span>02</span> Selkeät, rehelliset hinnat</li>
+          <li><span>03</span> Laaja palveluvalikoima</li>
+          <li><span>04</span> Henkilö-, paketti- ja asuntoautot</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="section section--dark reviews" id="arvostelut">
+    <div class="wrap">
+      <div class="reviews__header reveal-on-scroll">
+        <div class="reviews__header-text">
+          <span class="eyebrow">Arvostelut</span>
+          <h2>Mitä asiakkaamme<br><em>sanovat meistä</em></h2>
+        </div>
+        <div class="reviews__google-badge reveal-on-scroll">
+          <div class="reviews__google-logo">
+            <svg width="24" height="24" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+            <span>Google</span>
+          </div>
+          <div class="reviews__rating" id="reviewsRating">
+            <div class="reviews__stars" id="reviewsStars"></div>
+            <span class="reviews__score" id="reviewsScore"></span>
+            <span class="reviews__count" id="reviewsCount"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="reviews__carousel reveal-on-scroll">
+        <div class="reviews__track" id="reviewsTrack"></div>
+      </div>
+
+      <div class="reviews__cta reveal-on-scroll">
+        <p class="reviews__cta-text">Oletko tyytyväinen palveluumme?</p>
+        <a href="https://www.google.com/maps/place/JK+Best+Carwash/@61.5005111,23.571068,17z/reviews?hl=fi" target="_blank" rel="noopener noreferrer" class="reviews__cta-btn">
+          <svg width="22" height="22" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+          <span>Jätä oma arvostelu meille</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <div class="cta-banner__bg"></div>
+    <div class="wrap cta-banner__inner reveal-on-scroll">
+      <h2>Valmis puhdistamaan autosi?</h2>
+      <p>Soita tai tule käymään – autamme mielellämme!</p>
+      <a href="tel:+358458458171" class="btn btn--glow btn--large">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span>045 845 8171</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="yhteystiedot">
+    <div class="wrap">
+      <div class="section-head reveal-on-scroll">
+        <span class="eyebrow">Yhteystiedot</span>
+        <h2>Löydä <em>meidät</em></h2>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-card reveal-on-scroll">
+          <div class="contact-card__icon">📍</div>
+          <h3>Osoite</h3>
+          <p>Sileesuonkatu 12<br>33330 Tampere</p>
+        </div>
+        <div class="contact-card reveal-on-scroll">
+          <div class="contact-card__icon">🕐</div>
+          <h3>Aukioloajat</h3>
+          <p>Ma–Pe 09:00–18:00</p>
+          <p>La 10:00–16:00</p>
+        </div>
+        <div class="contact-card reveal-on-scroll">
+          <div class="contact-card__icon">📞</div>
+          <h3>Puhelin</h3>
+          <p><a href="tel:+358458458171">045 845 8171</a></p>
+        </div>
+        <div class="contact-card reveal-on-scroll">
+          <div class="contact-card__icon">✉️</div>
+          <h3>Sähköposti</h3>
+          <p><a href="mailto:info@bestcarwash.fi">info@bestcarwash.fi</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <div class="footer__brand">
+        <img src="assets/logo-jk.svg" alt="" width="32" height="32">
+        <span>JK Best Carwash</span>
+      </div>
+      <p>&copy; 2026 JK Best Carwash</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
