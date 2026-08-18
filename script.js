@@ -243,21 +243,45 @@ function initNav() {
   const nav = document.getElementById('nav');
   const burger = document.getElementById('navBurger');
   const links = document.getElementById('navLinks');
+  const overlay = document.getElementById('navOverlay');
+
+  const closeMenu = () => {
+    burger.classList.remove('nav__burger--open');
+    links.classList.remove('nav__links--open');
+    overlay.classList.remove('nav__overlay--open');
+    overlay.hidden = true;
+    document.body.classList.remove('nav-open');
+    burger.setAttribute('aria-expanded', 'false');
+    burger.setAttribute('aria-label', 'Avaa valikko');
+  };
+
+  const openMenu = () => {
+    burger.classList.add('nav__burger--open');
+    links.classList.add('nav__links--open');
+    overlay.hidden = false;
+    overlay.classList.add('nav__overlay--open');
+    document.body.classList.add('nav-open');
+    burger.setAttribute('aria-expanded', 'true');
+    burger.setAttribute('aria-label', 'Sulje valikko');
+  };
 
   window.addEventListener('scroll', () => {
     nav.classList.toggle('nav--scrolled', window.scrollY > 60);
   }, { passive: true });
 
   burger.addEventListener('click', () => {
-    burger.classList.toggle('nav__burger--open');
-    links.classList.toggle('nav__links--open');
+    if (links.classList.contains('nav__links--open')) closeMenu();
+    else openMenu();
   });
 
+  overlay.addEventListener('click', closeMenu);
+
   links.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      burger.classList.remove('nav__burger--open');
-      links.classList.remove('nav__links--open');
-    });
+    a.addEventListener('click', closeMenu);
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeMenu();
   });
 }
 

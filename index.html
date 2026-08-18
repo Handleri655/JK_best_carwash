@@ -43,15 +43,20 @@
         <a href="#meista">Meistä</a>
         <a href="#arvostelut">Arvostelut</a>
         <a href="#yhteystiedot">Yhteystiedot</a>
+        <a href="tel:+358458458171" class="nav__links-call">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Soita 045 845 8171
+        </a>
       </nav>
-      <a href="tel:+358458458171" class="nav__phone">
+      <a href="tel:+358458458171" class="nav__phone" aria-label="Soita 045 845 8171">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        Soita
+        <span>Soita</span>
       </a>
-      <button class="nav__burger" id="navBurger" aria-label="Valikko">
-        <span></span><span></span>
+      <button class="nav__burger" id="navBurger" aria-label="Avaa valikko" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
       </button>
     </div>
+    <div class="nav__overlay" id="navOverlay" hidden></div>
   </header>
 
   <!-- HERO -->
@@ -194,7 +199,7 @@
           </div>
           <div class="bento__card-overlay"></div>
           <div class="bento__card-content">
-            <div class="bento__icon">🔧</div>
+            <div class="bento__icon">🌀</div>
             <h3>Myllytys</h3>
             <p>Poistaa naarmut ja haalistumat.</p>
             <span class="bento__price">alk. 150 €</span>
@@ -327,7 +332,7 @@
       <div class="about__text reveal-on-scroll">
         <span class="eyebrow">Meistä</span>
         <h2>JK Best Carwash</h2>
-        <p class="about__lead">Pesemme, vahaamme ja huollamme autosi kuin omanamme. Laadukas työnjälki ja ystävällinen palvelu – joka kerta.</p>
+        <p class="about__lead">Pesemme, vahaamme ja huollamme autosi kuin omamme. Laadukas työnjälki ja ystävällinen palvelu – joka kerta.</p>
         <ul class="about__list">
           <li><span>01</span> Huolellinen käsityö</li>
           <li><span>02</span> Selkeät, rehelliset hinnat</li>

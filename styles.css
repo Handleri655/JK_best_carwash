@@ -155,14 +155,12 @@ body:hover .cursor-glow { opacity: 1; }
   right: 0;
   z-index: 100;
   padding: 16px 0;
-  transition: all 0.4s var(--ease-out-expo);
+  transition: background 0.4s var(--ease-out-expo), border-color 0.4s, padding 0.4s, opacity 0.4s var(--ease-out-expo);
   opacity: 0;
-  transform: translateY(-20px);
 }
 
 .nav--visible {
   opacity: 1;
-  transform: translateY(0);
 }
 
 .nav--scrolled {
@@ -230,24 +228,37 @@ body:hover .cursor-glow { opacity: 1; }
   box-shadow: 0 0 30px rgba(45,156,219,0.4);
 }
 
+.nav__links-call { display: none; }
+
 .nav__burger {
   display: none;
   flex-direction: column;
-  gap: 6px;
-  padding: 8px;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  margin-right: -8px;
+  z-index: 120;
 }
 
 .nav__burger span {
   display: block;
-  width: 24px;
+  width: 22px;
   height: 2px;
   background: var(--white);
   border-radius: 2px;
-  transition: all 0.3s;
+  transition: transform 0.3s var(--ease-out-expo), opacity 0.2s;
+  transform-origin: center;
 }
 
-.nav__burger--open span:first-child { transform: rotate(45deg) translate(5px, 6px); }
-.nav__burger--open span:last-child { transform: rotate(-45deg) translate(5px, -6px); }
+.nav__burger--open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav__burger--open span:nth-child(2) { opacity: 0; }
+.nav__burger--open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.nav__overlay {
+  display: none;
+}
 
 /* ---- HERO ---- */
 .hero {
@@ -712,8 +723,9 @@ body:hover .cursor-glow { opacity: 1; }
 
 .bento__card:nth-child(2) .bento__card-bg img { object-position: center; }
 .bento__card:nth-child(3) .bento__card-bg img { object-position: center 45%; }
-.bento__card:nth-child(4) .bento__card-bg img { object-position: center 40%; }
+.bento__card:nth-child(4) .bento__card-bg img { object-position: center 55%; }
 .bento__card:nth-child(5) .bento__card-bg img { object-position: center center; }
+.bento__card:nth-child(7) .bento__card-bg img { object-position: center 62%; }
 
 .bento__card-overlay {
   position: absolute;
@@ -1391,39 +1403,85 @@ body:hover .cursor-glow { opacity: 1; }
   .about__photo-wrap { max-width: 100%; }
 }
 
-@media (max-width: 768px) {
-  .nav__links {
+@media (max-width: 860px) {
+  .nav__inner { gap: 12px; }
+
+  .nav__overlay {
+    display: block;
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(6,13,26,0.97);
-    backdrop-filter: blur(20px);
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
+    inset: 0;
+    background: rgba(4, 10, 22, 0.72);
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s;
-    z-index: -1;
+    z-index: 90;
+  }
+
+  .nav__overlay--open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav__links {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: auto;
+    width: min(320px, 86vw);
+    margin: 0;
+    padding: 88px 24px 32px;
+    background: #0a1628;
+    border-left: 1px solid var(--border);
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 6px;
+    transform: translateX(100%);
+    opacity: 1;
+    pointer-events: none;
+    transition: transform 0.35s var(--ease-out-expo);
+    z-index: 110;
   }
 
   .nav__links--open {
-    opacity: 1;
-    pointer-events: all;
-    z-index: 99;
+    transform: translateX(0);
+    pointer-events: auto;
   }
 
   .nav__links a {
-    font-size: 1.25rem;
-    padding: 16px 32px;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--white);
+    padding: 14px 16px;
+    border-radius: 12px;
   }
 
-  .nav__phone { display: none; }
-  .nav__burger { display: flex; margin-left: auto; }
+  .nav__links-call {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 16px;
+    background: var(--blue);
+    color: var(--white);
+    border-radius: 50px;
+  }
 
+  .nav__phone span { display: none; }
+  .nav__phone {
+    padding: 10px;
+    margin-left: auto;
+    min-width: 44px;
+    min-height: 44px;
+    justify-content: center;
+  }
+  .nav__burger { display: flex; }
+}
+
+body.nav-open { overflow: hidden; }
+
+@media (max-width: 768px) {
   .hero__stats {
     flex-direction: column;
     gap: 20px;
