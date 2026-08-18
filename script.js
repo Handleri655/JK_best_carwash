@@ -3,18 +3,21 @@
    ============================================ */
 
 const SERVICES = [
-  { id: 1, name: 'Ulkopesu', prices: { henkiloauto: '20 €', pakettiauto: '25 €', asuntoauto: '35 €' } },
-  { id: 2, name: 'Ulkopesu, mattojen pesu, imurointi', from: true, prices: { henkiloauto: '35 €', pakettiauto: '40 €', asuntoauto: '50 €' } },
-  { id: 3, name: 'Ulkopesu, sisäpuhdistus, imurointi, ikkunoiden pesu', from: true, prices: { henkiloauto: '50 €', pakettiauto: '60 €', asuntoauto: '85 €' } },
-  { id: 4, name: 'Sisäpesu: lattianpesu, kattojen pesu, penkkien pesu', from: true, prices: { henkiloauto: '120 €', pakettiauto: '130 €', asuntoauto: '150 €' } },
-  { id: 5, name: 'Ulkopesu, kovavahaus', from: true, prices: { henkiloauto: '85 €', pakettiauto: '100 €', asuntoauto: '130 €' } },
-  { id: 6, name: 'Ulkopesu, myllytys', from: true, prices: { henkiloauto: '150 €', pakettiauto: '180 €', asuntoauto: '200 €' } },
-  { id: 7, name: 'Moottorin pesu', prices: { henkiloauto: '20 €', pakettiauto: '20 €', asuntoauto: '20 €' } },
-  { id: 8, name: 'Renkaiden vaihto', from: true, prices: { henkiloauto: '20 €', pakettiauto: '25 €', asuntoauto: '30 €' } },
-  { id: 9, name: 'Renkaiden säilytys', from: true, prices: { henkiloauto: '50 €', pakettiauto: '60 €', asuntoauto: '60 €' } },
-  { id: 10, name: 'Renkaiden vaihto, vanteet ja tasapainotus', from: true, prices: { henkiloauto: '80 €', pakettiauto: '90 €', asuntoauto: '100 €' } },
-  { id: 11, name: 'Öljynsuodattimen vaihto', prices: { henkiloauto: '40 €', pakettiauto: '40 €', asuntoauto: '40 €' } },
-  { id: 12, name: 'Pinnoitteet: NanoCeramic Protect Hard 9H', desc: 'Kovin mahdollinen keraaminen suoja autollesi', from: true, featured: true, prices: { henkiloauto: '450 €', pakettiauto: '550 €', asuntoauto: null } }
+  { name: 'Ulkopesu', from: { moottoripyora: true, kuormaauto: true }, prices: { henkiloauto: '20 €', pakettiauto: '25 €', asuntoauto: '35 €', moottoripyora: '25 €', kuormaauto: '80 €' } },
+  { name: 'Venepesu', from: true, prices: { venepesu: '50 €' } },
+  { name: 'Ulkopesu, mattojen pesu, imurointi', from: { henkiloauto: true, pakettiauto: true, asuntoauto: true }, prices: { henkiloauto: '35 €', pakettiauto: '40 €', asuntoauto: '50 €', kuormaauto: '120 €' } },
+  { name: 'Ulkopesu, sisäpuhdistus, imurointi, ikkunoiden pesu', from: true, prices: { henkiloauto: '50 €', pakettiauto: '60 €', asuntoauto: '85 €', kuormaauto: '150 €' } },
+  { name: 'Sisäpesu: lattianpesu, kattojen pesu, penkkien pesu', from: true, prices: { henkiloauto: '120 €', pakettiauto: '130 €', asuntoauto: '150 €', kuormaauto: '150 €' } },
+  { name: 'Ulkopesu, kovavahaus', from: true, prices: { henkiloauto: '85 €', pakettiauto: '100 €', asuntoauto: '130 €', kuormaauto: '130 €' } },
+  { name: 'Vahaus', from: true, prices: { venepesu: '150 €' } },
+  { name: 'Ulkopesu, myllytys', from: true, prices: { henkiloauto: '150 €', pakettiauto: '180 €', asuntoauto: '200 €', kuormaauto: '300 €' } },
+  { name: 'Myllytys', from: true, prices: { venepesu: '200 €' } },
+  { name: 'Moottorin pesu', prices: { henkiloauto: '20 €', pakettiauto: '30 €', asuntoauto: '30 €', kuormaauto: '50 €' } },
+  { name: 'Renkaiden vaihto', from: true, prices: { henkiloauto: '20 €', pakettiauto: '25 €', asuntoauto: '30 €' } },
+  { name: 'Renkaiden säilytys', from: true, prices: { henkiloauto: '50 €', pakettiauto: '60 €', asuntoauto: '60 €' } },
+  { name: 'Renkaiden vaihto, vanteet ja tasapainotus', from: true, prices: { henkiloauto: '80 €', pakettiauto: '90 €', asuntoauto: '100 €' } },
+  { name: 'Öljynsuodattimen vaihto', prices: { henkiloauto: '40 €', pakettiauto: '40 €', asuntoauto: '40 €' } },
+  { name: 'Pinnoitteet: NanoCeramic Protect Hard 9H', desc: 'Kovin mahdollinen keraaminen suoja autollesi', from: true, featured: true, prices: { henkiloauto: '450 €', pakettiauto: '550 €', asuntoauto: null, kuormaauto: null } }
 ];
 
 /* ---- GOOGLE REVIEWS (haettu Google Mapsista) ---- */
@@ -273,19 +276,27 @@ function initScrollReveal() {
 }
 
 /* ---- PRICING ---- */
+function isFromPrice(service, vehicle) {
+  if (!service.from) return false;
+  if (service.from === true) return true;
+  return !!service.from[vehicle];
+}
+
 function renderPrices(vehicle) {
   const grid = document.getElementById('priceGrid');
   if (!grid) return;
 
-  grid.innerHTML = SERVICES.map((s, i) => {
+  const items = SERVICES.filter(s => s.prices[vehicle] !== undefined);
+
+  grid.innerHTML = items.map((s, i) => {
     const price = s.prices[vehicle];
-    const display = price ? `${s.from ? 'alk. ' : ''}${price}` : 'Kysy hinta';
+    const display = price ? `${isFromPrice(s, vehicle) ? 'alk. ' : ''}${price}` : 'Kysy hinta';
     const priceClass = price ? '' : ' price-row__price--na';
 
     return `
       <div class="price-row${s.featured ? ' price-row--featured' : ''}" style="animation-delay:${i * 60}ms">
         <div class="price-row__left">
-          <span class="price-row__num">${s.id}</span>
+          <span class="price-row__num">${String(i + 1).padStart(2, '0')}</span>
           <div class="price-row__info">
             <span class="price-row__name">${s.name}</span>
             ${s.desc ? `<span class="price-row__desc">${s.desc}</span>` : ''}
