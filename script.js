@@ -12,10 +12,11 @@ const SERVICES = [
   { name: 'Vahaus', from: true, prices: { venepesu: '150 €' } },
   { name: 'Ulkopesu, myllytys', from: true, prices: { henkiloauto: '150 €', pakettiauto: '180 €', asuntoauto: '200 €', kuormaauto: '300 €' } },
   { name: 'Myllytys', from: true, prices: { venepesu: '200 €' } },
+  { name: 'Täysipesu: ulkopesu, myllytys, kovavahaus ja sisäpesu', from: true, prices: { henkiloauto: '300 €', pakettiauto: '350 €', asuntoauto: '400 €' } },
   { name: 'Moottorin pesu', prices: { henkiloauto: '20 €', pakettiauto: '30 €', asuntoauto: '30 €', kuormaauto: '50 €' } },
   { name: 'Renkaiden vaihto', from: true, prices: { henkiloauto: '20 €', pakettiauto: '25 €', asuntoauto: '30 €' } },
   { name: 'Renkaiden säilytys', from: true, prices: { henkiloauto: '50 €', pakettiauto: '60 €', asuntoauto: '60 €' } },
-  { name: 'Renkaiden vaihto, vanteet ja tasapainotus', from: true, prices: { henkiloauto: '80 €', pakettiauto: '90 €', asuntoauto: '100 €' } },
+  { name: 'Tasapainotus', from: true, prices: { henkiloauto: '40 €', pakettiauto: '45 €', asuntoauto: '50 €' } },
   { name: 'Öljynsuodattimen vaihto', prices: { henkiloauto: '40 €', pakettiauto: '40 €', asuntoauto: '40 €' } },
   { name: 'Pinnoitteet: NanoCeramic Protect Hard 9H', desc: 'Kovin mahdollinen keraaminen suoja autollesi', from: true, featured: true, prices: { henkiloauto: '450 €', pakettiauto: '550 €', asuntoauto: null, kuormaauto: null } }
 ];
