@@ -728,7 +728,7 @@ body:hover .cursor-glow { opacity: 1; }
 .bento__card:nth-child(3) .bento__card-bg img { object-position: center 45%; }
 .bento__card:nth-child(4) .bento__card-bg img { object-position: center 55%; }
 .bento__card:nth-child(5) .bento__card-bg img { object-position: center center; }
-.bento__card:nth-child(6) .bento__card-bg img { object-position: center 40%; }
+.bento__card:nth-child(6) .bento__card-bg img { object-position: center 45%; }
 .bento__card:nth-child(7) .bento__card-bg img { object-position: center 35%; }
 .bento__card:nth-child(9) .bento__card-bg img { object-position: center 62%; }
 
