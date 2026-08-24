@@ -86,7 +86,7 @@
 
       <div class="hero__stats reveal" data-delay="550">
         <div class="hero__stat">
-          <span class="hero__stat-num" data-count="12">0</span>
+          <span class="hero__stat-num" data-count="15">0</span>
           <span class="hero__stat-label">Palvelua</span>
         </div>
         <div class="hero__stat-divider"></div>
@@ -96,7 +96,7 @@
         </div>
         <div class="hero__stat-divider"></div>
         <div class="hero__stat">
-          <span class="hero__stat-num" data-count="3">0</span>
+          <span class="hero__stat-num" data-count="7">0</span>
           <span class="hero__stat-label">Ajoneuvotyyppiä</span>
         </div>
       </div>
@@ -213,9 +213,9 @@
           <div class="bento__card-overlay"></div>
           <div class="bento__icon" aria-hidden="true">🛞</div>
           <div class="bento__card-content">
-            <h3>Renkaat</h3>
-            <p>Vaihto.</p>
-            <span class="bento__price">alk. 20 €</span>
+            <h3>Renkaiden vaihto</h3>
+            <p>Vanteet ja tasapainotus.</p>
+            <span class="bento__price">alk. 80 €</span>
           </div>
         </article>
 
@@ -233,14 +233,15 @@
         </article>
 
         <article class="bento__card bento__card--has-bg reveal-on-scroll" style="--delay:6">
-          <div class="bento__card-bg">
-            <img src="assets/service-combo.jpg" alt="" loading="lazy">
+          <div class="bento__card-bg bento__card-bg--combo">
+            <img src="assets/service-combo-wash.jpg" alt="" loading="lazy" class="bento__combo-img bento__combo-img--wash">
+            <img src="assets/service-combo-interior.jpg" alt="" loading="lazy" class="bento__combo-img bento__combo-img--interior">
           </div>
           <div class="bento__card-overlay"></div>
           <div class="bento__icon" aria-hidden="true">🚿</div>
           <div class="bento__card-content">
-            <h3>Ulkopesu &amp; sisäpuhdistus</h3>
-            <p>Ulko- ja sisäpuhdistus samalla kertaa.</p>
+            <h3>Ulkopesu + sisäpesu</h3>
+            <p>Lattianpesu, kattojen pesu ja penkkien pesu.</p>
             <span class="bento__price">alk. 50 €</span>
           </div>
         </article>
@@ -298,8 +299,47 @@
           <div class="bento__icon" aria-hidden="true">🚚</div>
           <div class="bento__card-content">
             <h3>Kuorma-auto</h3>
-            <p>Ulko- ja sisäpesut, vahaus ja myllytys.</p>
+            <p>Täydellinen ulkopesu ja kuivaus.</p>
             <span class="bento__price">alk. 80 €</span>
+          </div>
+        </article>
+
+        <article class="bento__card bento__card--has-bg reveal-on-scroll" style="--delay:11">
+          <div class="bento__card-bg">
+            <img src="assets/service-machine.jpg" alt="" loading="lazy">
+          </div>
+          <div class="bento__card-overlay"></div>
+          <div class="bento__icon" aria-hidden="true">🚜</div>
+          <div class="bento__card-content">
+            <h3>Konepesu</h3>
+            <p>Traktorit ja työkoneet – ulkopesu.</p>
+            <span class="bento__price">alk. 40 €</span>
+          </div>
+        </article>
+
+        <article class="bento__card bento__card--has-bg reveal-on-scroll" style="--delay:12">
+          <div class="bento__card-bg">
+            <img src="assets/service-oil-filter.jpg" alt="" loading="lazy">
+          </div>
+          <div class="bento__card-overlay"></div>
+          <div class="bento__icon" aria-hidden="true">🔧</div>
+          <div class="bento__card-content">
+            <h3>Öljynsuodattimen vaihto</h3>
+            <p>Nopea ja huolellinen vaihto.</p>
+            <span class="bento__price">alk. 40 €</span>
+          </div>
+        </article>
+
+        <article class="bento__card bento__card--has-bg reveal-on-scroll" style="--delay:13">
+          <div class="bento__card-bg">
+            <img src="assets/service-engine-wash.jpg" alt="" loading="lazy">
+          </div>
+          <div class="bento__card-overlay"></div>
+          <div class="bento__icon" aria-hidden="true">⚙️</div>
+          <div class="bento__card-content">
+            <h3>Moottorin pesu</h3>
+            <p>Auton moottoritilan pesu ja puhdistus.</p>
+            <span class="bento__price">alk. 20 €</span>
           </div>
         </article>
       </div>
@@ -339,6 +379,10 @@
           <span class="vehicle-tab__icon">🏍️</span>
           Moottoripyörä
         </button>
+        <button class="vehicle-tab" data-v="konepesu" role="tab" aria-selected="false">
+          <span class="vehicle-tab__icon">🚜</span>
+          Konepesu
+        </button>
       </div>
 
       <div class="price-grid" id="priceGrid"></div>
@@ -363,7 +407,7 @@
           <li><span>01</span> Huolellinen käsityö</li>
           <li><span>02</span> Selkeät, rehelliset hinnat</li>
           <li><span>03</span> Laaja palveluvalikoima</li>
-          <li><span>04</span> Autot, kuorma-autot, veneet ja moottoripyörät</li>
+          <li><span>04</span> Autot, kuorma-autot, veneet, moottoripyörät ja työkoneet</li>
         </ul>
       </div>
     </div>
