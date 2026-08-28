@@ -7,7 +7,7 @@ const SERVICES = [
   { name: 'Venepesu', from: true, prices: { venepesu: '50 €' } },
   { name: 'Konepesu', from: true, prices: { konepesu: '40 €' } },
   { name: 'Ulkopesu, mattojen pesu, imurointi', from: { henkiloauto: true, pakettiauto: true, asuntoauto: true }, prices: { henkiloauto: '35 €', pakettiauto: '40 €', asuntoauto: '50 €', kuormaauto: '120 €' } },
-  { name: 'Ulkopesu, sisäpuhdistus, imurointi, ikkunoiden pesu', from: true, prices: { henkiloauto: '50 €', pakettiauto: '60 €', asuntoauto: '85 €', kuormaauto: '150 €' } },
+  { name: 'Ulkopesu, sisäpuhdistus, imurointi, mattojen pesu, ikkunoiden pesu', from: true, prices: { henkiloauto: '50 €', pakettiauto: '60 €', asuntoauto: '85 €', kuormaauto: '150 €' } },
   { name: 'Ulkopesu + sisäpesu: lattianpesu, kattojen pesu, penkkien pesu', from: true, prices: { henkiloauto: '150 €', pakettiauto: '160 €', asuntoauto: '185 €', kuormaauto: '250 €' } },
   { name: 'Sisäpesu: lattianpesu, kattojen pesu, penkkien pesu', from: true, prices: { henkiloauto: '120 €', pakettiauto: '130 €', asuntoauto: '150 €', kuormaauto: '150 €' } },
   { name: 'Ulkopesu, kovavahaus', from: true, prices: { henkiloauto: '85 €', pakettiauto: '100 €', asuntoauto: '130 €', kuormaauto: '130 €' } },

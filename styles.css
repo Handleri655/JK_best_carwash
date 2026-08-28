@@ -1401,7 +1401,7 @@ body:hover .cursor-glow { opacity: 1; }
 /* ---- CONTACT ---- */
 .contact-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 16px;
 }
 
@@ -1459,6 +1459,23 @@ body:hover .cursor-glow { opacity: 1; }
   font-weight: 700;
   font-size: 0.875rem;
   color: var(--white);
+}
+
+.footer__socials {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.footer__socials a {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: color 0.2s;
+}
+
+.footer__socials a:hover {
+  color: var(--blue-light);
 }
 
 .footer p {
