@@ -72,17 +72,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   text-align: center;
 }
 
-.splash__logo {
-  margin-bottom: 24px;
-  animation: splashLogo 1.2s var(--ease-out-expo) forwards;
-  opacity: 0;
-  transform: scale(0.5);
-}
-
-@keyframes splashLogo {
-  to { opacity: 1; transform: scale(1); }
-}
-
 .splash__text {
   display: flex;
   gap: 16px;
@@ -100,8 +89,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   animation: splashWord 0.8s var(--ease-out-expo) forwards;
 }
 
-.splash__word:nth-child(1) { animation-delay: 0.4s; }
-.splash__word:nth-child(2) { animation-delay: 0.6s; color: var(--blue-light); }
+.splash__word:nth-child(1) { animation-delay: 0.3s; }
+.splash__word:nth-child(2) { animation-delay: 0.5s; }
+.splash__word:nth-child(3) { animation-delay: 0.7s; }
 
 @keyframes splashWord {
   to { opacity: 1; transform: translateY(0); }
@@ -184,9 +174,47 @@ body:hover .cursor-glow { opacity: 1; }
   align-items: center;
   gap: 10px;
   font-weight: 800;
-  font-size: 0.9rem;
-  letter-spacing: 0.08em;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
   color: var(--white);
+}
+
+.brand-jk {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.1rem;
+  height: 2.1rem;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+  color: var(--white);
+  font-weight: 800;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+
+.about__text h2 .brand-jk {
+  width: 2.6rem;
+  height: 2.6rem;
+  font-size: 0.95rem;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.splash__word:nth-child(1) {
+  animation-delay: 0.3s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+  color: var(--white);
+  letter-spacing: 0.06em;
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
 }
 
 .nav__links {
@@ -653,11 +681,11 @@ body:hover .cursor-glow { opacity: 1; }
   grid-template-columns: 1.2fr 1fr 1fr;
   grid-template-rows: auto auto auto auto auto auto auto auto;
   grid-template-areas:
-    "hero wash  wax"
-    "hero polish tires"
-    "interior combo combo"
+    "hero wash  interior"
+    "hero combo50 combo"
+    "wax polish tires"
     "premium premium premium"
-    "boat boat moto"
+    "tires20 boat moto"
     "truck machine oil"
     "engine engine engine";
   gap: 16px;
@@ -677,6 +705,8 @@ body:hover .cursor-glow { opacity: 1; }
 .bento__card:nth-child(12) { grid-area: machine; }
 .bento__card:nth-child(13) { grid-area: oil; }
 .bento__card:nth-child(14) { grid-area: engine; }
+.bento__card:nth-child(15) { grid-area: tires20; }
+.bento__card:nth-child(16) { grid-area: combo50; }
 
 .bento__card {
   background: var(--surface);
@@ -1442,9 +1472,10 @@ body:hover .cursor-glow { opacity: 1; }
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
       "hero hero"
-      "wash wax"
-      "polish tires"
-      "interior combo"
+      "wash interior"
+      "combo50 combo"
+      "wax polish"
+      "tires tires20"
       "premium premium"
       "boat moto"
       "truck machine"
@@ -1561,11 +1592,13 @@ body.nav-open { overflow: hidden; }
     grid-template-areas:
       "hero"
       "wash"
+      "interior"
+      "combo50"
+      "combo"
       "wax"
       "polish"
       "tires"
-      "interior"
-      "combo"
+      "tires20"
       "premium"
       "boat"
       "moto"

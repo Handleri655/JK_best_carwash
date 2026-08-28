@@ -16,10 +16,8 @@
   <!-- Intro splash -->
   <div class="splash" id="splash">
     <div class="splash__inner">
-      <div class="splash__logo">
-        <img src="assets/logo-jk.svg" alt="" width="72" height="72">
-      </div>
       <div class="splash__text">
+        <span class="splash__word" data-word="JK">JK</span>
         <span class="splash__word" data-word="BEST">BEST</span>
         <span class="splash__word" data-word="CARWASH">CARWASH</span>
       </div>
@@ -34,8 +32,8 @@
   <header class="nav" id="nav">
     <div class="nav__inner">
       <a href="#" class="nav__brand">
-        <img src="assets/logo-jk.svg" alt="JK" width="40" height="40">
-        <span>BEST CARWASH</span>
+        <span class="brand-jk">JK</span>
+        <span>Best Carwash</span>
       </a>
       <nav class="nav__links" id="navLinks">
         <a href="#palvelut">Palvelut</a>
@@ -86,7 +84,7 @@
 
       <div class="hero__stats reveal" data-delay="550">
         <div class="hero__stat">
-          <span class="hero__stat-num" data-count="15">0</span>
+          <span class="hero__stat-num" data-count="17">0</span>
           <span class="hero__stat-label">Palvelua</span>
         </div>
         <div class="hero__stat-divider"></div>
@@ -342,6 +340,33 @@
             <span class="bento__price">alk. 20 €</span>
           </div>
         </article>
+
+        <article class="bento__card bento__card--has-bg reveal-on-scroll" style="--delay:14">
+          <div class="bento__card-bg">
+            <img src="assets/service-tires.jpg" alt="" loading="lazy">
+          </div>
+          <div class="bento__card-overlay"></div>
+          <div class="bento__icon" aria-hidden="true">🔄</div>
+          <div class="bento__card-content">
+            <h3>Renkaan vaihto</h3>
+            <p>Pelkkä renkaiden vaihto.</p>
+            <span class="bento__price">alk. 20 €</span>
+          </div>
+        </article>
+
+        <article class="bento__card bento__card--has-bg reveal-on-scroll" style="--delay:15">
+          <div class="bento__card-bg bento__card-bg--combo">
+            <img src="assets/service-combo-wash.jpg" alt="" loading="lazy" class="bento__combo-img bento__combo-img--wash">
+            <img src="assets/service-combo-interior.jpg" alt="" loading="lazy" class="bento__combo-img bento__combo-img--interior">
+          </div>
+          <div class="bento__card-overlay"></div>
+          <div class="bento__icon" aria-hidden="true">🧼</div>
+          <div class="bento__card-content">
+            <h3>Ulkopesu ja sisäpuhdistus</h3>
+            <p>Imurointi ja ikkunoiden pesu.</p>
+            <span class="bento__price">alk. 50 €</span>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -401,7 +426,7 @@
       </div>
       <div class="about__text reveal-on-scroll">
         <span class="eyebrow">Meistä</span>
-        <h2>JK Best Carwash</h2>
+        <h2><span class="brand-jk">JK</span> Best Carwash</h2>
         <p class="about__lead">Pesemme, vahaamme ja huollamme autosi kuin omamme. Laadukas työnjälki ja ystävällinen palvelu – joka kerta.</p>
         <ul class="about__list">
           <li><span>01</span> Huolellinen käsityö</li>
@@ -489,7 +514,7 @@
         <div class="contact-card reveal-on-scroll">
           <div class="contact-card__icon">✉️</div>
           <h3>Sähköposti</h3>
-          <p><a href="mailto:info@bestcarwash.fi">info@bestcarwash.fi</a></p>
+          <p><a href="mailto:jk.bestcarwash@gmail.com">jk.bestcarwash@gmail.com</a></p>
         </div>
       </div>
     </div>
@@ -499,8 +524,8 @@
   <footer class="footer">
     <div class="wrap footer__inner">
       <div class="footer__brand">
-        <img src="assets/logo-jk.svg" alt="" width="32" height="32">
-        <span>JK Best Carwash</span>
+        <span class="brand-jk">JK</span>
+        <span>Best Carwash</span>
       </div>
       <p>&copy; 2026 JK Best Carwash</p>
     </div>
