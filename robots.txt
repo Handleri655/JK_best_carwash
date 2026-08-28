@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://handleri655.github.io/JK_best_carwash/sitemap.xml
